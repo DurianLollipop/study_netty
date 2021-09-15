@@ -17,12 +17,7 @@ public class BIOServer {
         //思路
         //1. 创建一个线程池
         //2. 如果有客户端连接，就创建一个线程，与之通讯(单独写一个方法)
-        ExecutorService executorService = new ThreadPoolExecutor(2,
-                5,
-                2,
-                TimeUnit.SECONDS,
-                new ArrayBlockingQueue<>(3),
-                Executors.defaultThreadFactory(), new ThreadPoolExecutor.AbortPolicy());
+        ExecutorService executorService = Executors.newCachedThreadPool();
         ServerSocket serverSocket = new ServerSocket(6666);
         System.out.println("服务器启动了");
         while (true) {
@@ -52,7 +47,7 @@ public class BIOServer {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            System.out.println("关闭和socket的连接");
+            System.out.println("关闭和client的连接");
             try {
                 socket.close();
             } catch (Exception e) {
