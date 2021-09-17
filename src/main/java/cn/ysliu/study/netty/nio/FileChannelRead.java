@@ -8,7 +8,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.StandardCharsets;
 
-public class NIOFileChannelRead {
+public class FileChannelRead {
 
   public static void main(String[] args) throws IOException {
 

@@ -9,7 +9,7 @@ import java.nio.IntBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.StandardCharsets;
 
-public class NIOFileChannelWrite {
+public class FileChannelWrite {
 
   public static void main(String[] args) throws IOException {
     String message = "hello nio fileChannel";
